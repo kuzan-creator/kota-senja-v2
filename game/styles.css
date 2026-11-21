@@ -1,0 +1,48 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #1a0f2e; font-family: "Segoe UI", Arial, sans-serif; color: #fff; }
+#app, #app canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+.hidden { display: none !important; }
+
+#hud { position: fixed; inset: 0; pointer-events: none; z-index: 5; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,.8); }
+.hud-label { font-size: 12px; letter-spacing: 2px; color: #ffb347; margin-right: 6px; }
+#hud-left { position: absolute; top: 14px; left: 16px; font-size: 16px; line-height: 1.5; }
+.bar { display: inline-block; width: 150px; height: 12px; background: rgba(0,0,0,.55); border: 1px solid #fff3; vertical-align: middle; }
+.bar div { height: 100%; }
+#health-fill { background: #37d67a; width: 100%; }
+#armour-fill { background: #4aa8ff; width: 0%; }
+#money-num { color: #7dff9e; font-size: 18px; }
+#wanted-stars { color: #ff5a5a; font-size: 20px; letter-spacing: 3px; }
+#hud-right { position: absolute; top: 14px; right: 16px; text-align: right; }
+#minimap { border: 2px solid rgba(255,179,71,.9); border-radius: 8px; background: rgba(10,10,30,.8); display: block; }
+#respect-row, #radio-row { margin-top: 6px; font-size: 14px; }
+#respect-name, #radio-name { color: #ffd76a; }
+#objective-box { position: absolute; left: 50%; transform: translateX(-50%); top: 14px; text-align: center; background: rgba(0,0,0,.55); border: 1px solid #ffb34788; border-radius: 8px; padding: 8px 18px; max-width: 560px; }
+#objective-title { color: #ffb347; font-size: 15px; letter-spacing: 2px; }
+#objective-text { font-size: 15px; font-weight: normal; margin-top: 2px; }
+#weapon-box { position: absolute; left: 16px; bottom: 16px; background: rgba(0,0,0,.55); border-radius: 8px; padding: 8px 14px; font-size: 17px; }
+#ammo-num { font-size: 14px; color: #ffd76a; }
+#speed-box { position: absolute; right: 16px; bottom: 16px; background: rgba(0,0,0,.55); border-radius: 8px; padding: 8px 14px; font-size: 26px; text-align: right; }
+#drive-hint { font-size: 11px; color: #ccc; font-weight: normal; display: none; }
+#toast { position: absolute; left: 50%; transform: translateX(-50%); bottom: 110px; background: rgba(0,0,0,.65); padding: 8px 18px; border-radius: 8px; font-size: 17px; opacity: 0; transition: opacity .3s; max-width: 640px; text-align: center; }
+#interact-prompt { position: absolute; left: 50%; transform: translateX(-50%); bottom: 170px; background: #ffb347; color: #1a0f2e; text-shadow: none; padding: 8px 18px; border-radius: 8px; font-size: 17px; }
+
+#wheel { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 8; background: rgba(0,0,0,.8); border: 2px solid #ffb347; border-radius: 12px; padding: 18px; text-align: center; pointer-events: auto; }
+.wheel-title { color: #ffb347; letter-spacing: 2px; margin-bottom: 10px; }
+.wheel-row button { font-size: 16px; font-weight: bold; padding: 10px 14px; margin: 4px; background: #2a1a4a; color: #fff; border: 1px solid #ffb347; border-radius: 8px; cursor: pointer; }
+.wheel-row button:hover { background: #ffb347; color: #1a0f2e; }
+
+#start-screen, #pause-screen, #shop-screen, #end-screen { position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(26,15,46,.88), rgba(120,40,20,.82)); }
+.panel { max-width: 680px; width: 92%; background: rgba(10,6,24,.92); border: 2px solid #ffb347; border-radius: 14px; padding: 28px 32px; text-align: center; }
+.panel h1 { font-size: 58px; letter-spacing: 8px; color: #ffb347; text-shadow: 0 0 24px rgba(255,140,0,.7); }
+.panel h2 { font-size: 34px; letter-spacing: 4px; color: #ffb347; margin-bottom: 10px; }
+.tagline { font-size: 17px; margin: 8px 0 12px; color: #ffe9c4; }
+.story { font-size: 15px; font-weight: normal; line-height: 1.5; margin-bottom: 14px; }
+.controls { list-style: none; font-size: 14px; font-weight: normal; line-height: 1.8; margin-bottom: 12px; color: #ddd; }
+.controls b { color: #ffd76a; }
+.features { font-size: 13px; color: #ffb347; margin-bottom: 18px; line-height: 1.5; }
+.panel button { font-size: 18px; font-weight: bold; padding: 12px 26px; margin: 6px; background: #ffb347; color: #1a0f2e; border: none; border-radius: 10px; cursor: pointer; }
+.panel button:hover { background: #ffd76a; }
+.foot { font-size: 12px; color: #aaa; font-weight: normal; margin-top: 14px; }
+#shop-items button { display: block; width: 100%; font-size: 16px; text-align: left; background: #2a1a4a; color: #fff; border: 1px solid #ffb34755; margin: 6px 0; }
+#shop-items button:hover { background: #3d2566; }
+#shop-desc { font-weight: normal; margin-bottom: 10px; color: #ffe9c4; }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kota Senja — Open-World Crime at Dusk</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app"></div>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div id="hud-left">
+    <div id="health-row"><span class="hud-label">HEALTH</span><div class="bar"><div id="health-fill"></div></div><span id="health-num">100</span></div>
+    <div id="armour-row"><span class="hud-label">ARMOUR</span><div class="bar"><div id="armour-fill"></div></div><span id="armour-num">0</span></div>
+    <div id="money-row"><span class="hud-label">MONEY</span><span id="money-num">$500</span></div>
+    <div id="wanted-row"><span class="hud-label">WANTED</span><span id="wanted-stars">☆☆☆☆☆</span></div>
+  </div>
+  <div id="hud-right">
+    <canvas id="minimap" width="190" height="190"></canvas>
+    <div id="respect-row"><span class="hud-label">RESPECT</span><span id="respect-name">Rookie</span></div>
+    <div id="radio-row"><span class="hud-label">RADIO</span><span id="radio-name">Senja FM</span></div>
+  </div>
+  <div id="objective-box">
+    <div id="objective-title">MISSION 1 — FIRST WRENCH</div>
+    <div id="objective-text">Reach the garage in Pasar Baru.</div>
+  </div>
+  <div id="weapon-box">
+    <div id="weapon-name">Pistol</div>
+    <div id="ammo-num">24 / ∞</div>
+  </div>
+  <div id="speed-box"><span id="speed-num">0</span><span class="hud-label"> km/h</span><div id="drive-hint">IN CAR — W drive · S brake · A/D steer</div></div>
+  <div id="toast"></div>
+  <div id="interact-prompt" class="hidden">Press <b>E</b> — <span id="interact-text"></span></div>
+</div>
+
+<!-- Weapon wheel -->
+<div id="wheel" class="hidden">
+  <div class="wheel-title">WEAPON WHEEL — press 1-4 or click</div>
+  <div class="wheel-row">
+    <button data-w="0">1 · Pistol</button>
+    <button data-w="1">2 · SMG</button>
+    <button data-w="2">3 · Shotgun</button>
+    <button data-w="3">4 · Rifle</button>
+  </div>
+</div>
+
+<!-- Start screen -->
+<div id="start-screen">
+  <div class="panel">
+    <h1>KOTA SENJA</h1>
+    <p class="tagline">An original open-world crime game in a fictional Indonesian coastal city at dusk.</p>
+    <p class="story">You are <b>Raka</b>, a young mechanic. Ten jobs stand between you and the top of the city. Drive, steal, fight, race — and stay ahead of the police.</p>
+    <ul class="controls">
+      <li><b>W A S D</b> move / drive &nbsp;·&nbsp; <b>Shift</b> run &nbsp;·&nbsp; <b>E</b> enter / steal car, talk, shop</li>
+      <li><b>Mouse click</b> shoot &nbsp;·&nbsp; <b>1–4 / Q</b> weapon wheel &nbsp;·&nbsp; <b>C</b> call crew &nbsp;·&nbsp; <b>R</b> radio &nbsp;·&nbsp; <b>P / Esc</b> pause</li>
+    </ul>
+    <p class="features">10 story missions · Police helicopter &amp; roadblocks · Weapon wheel · Garage upgrades · Radio · Shops &amp; safehouses · Street races · Respect ranks · Crew</p>
+    <button id="btn-start">START GAME</button>
+    <button id="btn-continue" class="hidden">CONTINUE — LOAD SAVE</button>
+    <p class="foot">Runs fully offline. No real places, people or brands. Original art, music and story.</p>
+  </div>
+</div>
+
+<!-- Pause -->
+<div id="pause-screen" class="hidden">
+  <div class="panel">
+    <h2>PAUSED</h2>
+    <p id="pause-stats"></p>
+    <button id="btn-resume">RESUME</button>
+    <button id="btn-save">SAVE GAME</button>
+    <button id="btn-restart">RESTART (NEW GAME)</button>
+    <p class="foot">Progress also saves at safehouses.</p>
+  </div>
+</div>
+
+<!-- Shop / garage / safehouse panel -->
+<div id="shop-screen" class="hidden">
+  <div class="panel">
+    <h2 id="shop-title">SHOP</h2>
+    <p id="shop-desc"></p>
+    <div id="shop-items"></div>
+    <button id="btn-shop-close">CLOSE (E)</button>
+  </div>
+</div>
+
+<!-- Mission complete / game over -->
+<div id="end-screen" class="hidden">
+  <div class="panel">
+    <h2 id="end-title">MISSION COMPLETE</h2>
+    <p id="end-text"></p>
+    <button id="btn-end-close">CONTINUE</button>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
